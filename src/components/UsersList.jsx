@@ -13,15 +13,16 @@ useEffect(() => {
 return(
 <div>
     <h1>Listado: </h1>
-    <ul style={{listStyle:'none', width:'100%', height:'60rem', display:'flex', flexDirection:'column', justifyContent:'space-between', flexWrap:'wrap'}}> {users.map((user, index) => 
+    <ul style={{listStyle:'none', width:'100%', display:'flex', flexDirection:'row', justifyContent:'space-between', flexWrap:'wrap'}}> {users.map((user, index) => 
     <li key={index} style={{marginTop:'1rem'}}>
         <Card title={user.name.first}
-            fullname={`${user.name.last}, ${user.name.first}`} 
+            fullname={`${user.name.first} ${user.name.last}`} 
             gender={user.gender} city={user.location.city} 
             country={user.location.country} 
             email={user.email} 
-            phone={user.cell}/>
-    </li>
+            phone={user.cell}
+            img={user.picture.large}/>
+    </li>   
     )}</ul>
 </div>
 )}
